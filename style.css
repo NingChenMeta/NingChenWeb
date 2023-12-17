@@ -7,6 +7,14 @@ html {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
+.DingBuLan {
+  height: auto;
+  background-color: #e4e4e4;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
 
 .chat-container {
   height: 100vh;
@@ -100,18 +108,28 @@ html {
 #nextButton:hover {
   background-color: #45a049;
 }
+
+/* ...原有的样式... */
+
 /* 媒体查询 */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .chat-container {
-    width: 100%; /* 确保聊天容器占据整个屏幕宽度 */
-        height: 100vh;
-    margin-left: 0; /* 左边距设置为0 */
-    margin-right: 0; /* 右边距也设置为0 */
+    width: 100%; /* 确保聊天容器在手机上充满整个宽度 */
   }
 
+  .chat-header,
   #nextButton {
-    width: 100%; /* 按钮填充整个聊天容器宽度 */
+    font-size: 18px; /* 增大顶部栏和底部按钮的字体大小 */
+    padding: 15px; /* 增大顶部栏和底部按钮的内边距 */
   }
 
-  /* 根据需要添加其他移动设备特定的样式 */
+  .chat-box {
+    width: 100%; /* 确保对话框充满聊天容器宽度 */
+  }
+
+  .message {
+    font-size: 16px; /* 调整消息文本字体大小 */
+  }
 }
+
+/* ...原有的样式... */
