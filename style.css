@@ -121,6 +121,7 @@ html {
   #nextButton {
     font-size: 18px; /* 增大顶部栏和底部按钮的字体大小 */
     padding: 15px; /* 增大顶部栏和底部按钮的内边距 */
+    transform: translateY(-30px);
   }
 
   .chat-box {
