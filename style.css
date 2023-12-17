@@ -2,6 +2,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  width: 100%; /* 确保 body 和 html 充满整个屏幕宽度 */
   height: 100%;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -9,10 +10,12 @@ html {
 
 .chat-container {
   height: 100vh;
+  width: 70%; /* 默认宽度 */
+  max-width: 1000px; /* 最大宽度 */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   border: 1px solid #ddd;
   background-color: #fff;
@@ -28,12 +31,12 @@ html {
 .chat-message {
   display: flex;
   align-items: flex-start; /* 确保头像可以向上移动 */
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: #ddd;
   background-image: url("https://i.imgs.ovh/2023/12/01/wLBhp.md.jpeg"); /* 替换为实际的头像图片路径 */
@@ -48,22 +51,27 @@ html {
 .message-content {
   display: flex;
   flex-direction: column;
-  width: 100%; /* 确保消息内容占据剩余空间 */
+  align-items: flex-start; /* 使子元素（昵称和消息）对齐到开始位置 */
 }
 
 .nickname {
   font-weight: lighter; /* 设置为细体 */
   color: gray; /* 字体颜色设置为灰色 */
   margin-bottom: 3px;
-  font-size: 13px;
+  font-size: 12px;
   /* 字体大小保持不变，如果需要调整，可以在这里设置 font-size */
 }
 
 .message {
-  font-size: 16px;
+  color: #383838;
+  display: inline-block;
   background-color: rgba(233, 226, 236, 0.8);
+  font-size: 17px;
   padding: 10px;
   border-radius: 10px;
+  margin-right: 13%;
+  letter-spacing: 0.5px; /* 增加文本间距 */
+  line-height: 1.8; /* 增加行间距，1.5 是常用的行间距值 */
   word-wrap: break-word;
   position: relative; /* 为伪元素定位做准备 */
   /* ...其他样式保持不变... */
@@ -91,4 +99,18 @@ html {
 
 #nextButton:hover {
   background-color: #45a049;
+}
+/* 媒体查询 */
+@media (max-width: 800px) {
+  .chat-container {
+    width: 100%; /* 确保聊天容器占据整个屏幕宽度 */
+    margin-left: 0; /* 左边距设置为0 */
+    margin-right: 0; /* 右边距也设置为0 */
+  }
+
+  #nextButton {
+    width: 100%; /* 按钮填充整个聊天容器宽度 */
+  }
+
+  /* 根据需要添加其他移动设备特定的样式 */
 }
