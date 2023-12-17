@@ -1,9 +1,8 @@
-document.getElementById('nextButton').addEventListener('click', function() {
+document.getElementById('nextButton').addEventListener('click', () => {
     fetch('article.txt')
         .then(response => response.text())
         .then(text => {
-            let articleParts = text.split("\n\n"); // 假设每个段落由两个换行符分隔
-            displayNextPart(articleParts);
+            displayNextPart(text);
         });
 });
 
@@ -11,37 +10,38 @@ let currentPart = 0;
 let isArticleLoaded = false;
 let articleParts = [];
 
-function displayNextPart(parts) {
+function displayNextPart(text) {
     if (!isArticleLoaded) {
-        articleParts = parts;
+        articleParts = text.split("\n\n"); // 假设每个段落由两个换行符分隔
         isArticleLoaded = true;
     }
 
     if (currentPart < articleParts.length) {
-        let dialogBox = document.getElementById('dialogBox');
-        let newParagraph = document.createElement("div");
-        newParagraph.classList.add("dialog-entry");
+        const chatBox = document.getElementById('chatBox');
+        const newMessage = document.createElement("div");
+        newMessage.classList.add("chat-message");
 
-        // 创建头像元素
-        let avatar = document.createElement("div");
+        const avatar = document.createElement("div");
         avatar.classList.add("avatar");
 
-        // 创建文本元素
-        let text = document.createElement("p");
-        text.innerText = articleParts[currentPart];
+        const nickname = document.createElement("span");
+        nickname.classList.add("nickname");
+        nickname.innerText = "昵称"; // 替换为实际昵称
 
-        newParagraph.appendChild(avatar);
-        newParagraph.appendChild(text);
-        dialogBox.appendChild(newParagraph);
+        const message = document.createElement("span");
+        message.classList.add("message");
+        message.innerText = articleParts[currentPart];
 
-        // 滚动到对话框的底部
-        setTimeout(() => {
-            dialogBox.scrollTop = dialogBox.scrollHeight;
-        }, 0);
+        newMessage.appendChild(avatar);
+        newMessage.appendChild(nickname);
+        newMessage.appendChild(message);
+        chatBox.insertBefore(newMessage, chatBox.firstChild);
 
         currentPart++;
-    } else {
-        document.getElementById('nextButton').innerText = "已结束";
+    }
+
+    if (currentPart >= articleParts.length) {
         document.getElementById('nextButton').disabled = true;
+        document.getElementById('nextButton').innerText = "已结束";
     }
 }
