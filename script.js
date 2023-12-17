@@ -23,12 +23,14 @@ function displayNextPart(parts) {
         newParagraph.innerText = articleParts[currentPart];
         dialogBox.appendChild(newParagraph);
 
-        // 滚动到对话框的底部
-        dialogBox.scrollTop = dialogBox.scrollHeight;
-
         currentPart++;
     } else {
         document.getElementById('nextButton').innerText = "已结束";
         document.getElementById('nextButton').disabled = true;
     }
+
+    // 更新滚动位置，将其移至对话框的底部
+    setTimeout(() => {
+        dialogBox.scrollTop = dialogBox.scrollHeight;
+    }, 0);
 }
