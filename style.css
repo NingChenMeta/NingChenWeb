@@ -104,6 +104,7 @@ html {
 @media (max-width: 800px) {
   .chat-container {
     width: 100%; /* 确保聊天容器占据整个屏幕宽度 */
+        height: 100vh;
     margin-left: 0; /* 左边距设置为0 */
     margin-right: 0; /* 右边距也设置为0 */
   }
