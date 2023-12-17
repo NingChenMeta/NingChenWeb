@@ -18,10 +18,10 @@ html {
 
 .chat-container {
   height: 100vh;
-  width: 70%; /* 默认宽度 */
-  max-width: 1000px; /* 最大宽度 */
   display: flex;
   flex-direction: column;
+  width: 70%; /* 默认宽度 */
+  max-width: 1000px; /* 最大宽度 */
   justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
@@ -31,8 +31,8 @@ html {
 }
 
 .chat-box {
-  overflow-y: auto;
   flex-grow: 1;
+  overflow-y: auto;
   padding: 10px;
 }
 
@@ -119,9 +119,8 @@ html {
 
   .chat-header,
   #nextButton {
-    font-size: 18px; /* 增大顶部栏和底部按钮的字体大小 */
+    font-size: 20px; /* 增大顶部栏和底部按钮的字体大小 */
     padding: 15px; /* 增大顶部栏和底部按钮的内边距 */
-    transform: translateY(-30px);
   }
 
   .chat-box {
