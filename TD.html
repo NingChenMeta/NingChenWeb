@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>系列课程</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ececec;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #header {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      #progress-container {
+        width: 100%;
+        max-width: 600px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #progress-bar {
+        width: 100%;
+        background-color: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+      #progress-bar div {
+        height: 20px;
+        width: 0;
+        background-color: #4caf50;
+        text-align: center;
+        color: white;
+        border-radius: 5px;
+        transition: width 0.5s;
+      }
+      #content {
+        width: 100%;
+        max-width: 600px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .course-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .course-item:last-child {
+        border-bottom: none;
+      }
+      .course-item button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .course-item button:disabled {
+        background-color: #ccc;
+      }
+      /* 响应式设计 */
+      @media (max-width: 600px) {
+        #header {
+          font-size: 20px;
+          padding: 10px;
+        }
+        #progress-container,
+        #content {
+          padding: 15px;
+        }
+        .course-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .course-item button {
+          align-self: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">系列课程主题</div>
+    <div id="progress-container">
+      <div>学习进度</div>
+      <div id="progress-bar"><div></div></div>
+    </div>
+    <div id="content">
+      <div class="course-item">
+        <span>课程1：天道解读第一天</span>
+        <button onclick="loadCourse('TD01.html')">阅读</button>
+      </div>
+      <div class="course-item">
+        <span>课程2：天道解读第二天</span>
+        <button id="course2" onclick="loadCourse('TD02.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程3：天道解读第三天</span>
+        <button id="course3" onclick="loadCourse('TD03.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程4：天道解读第四天</span>
+        <button id="course4" onclick="loadCourse('TD04.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程5：天道解读第五天</span>
+        <button id="course5" onclick="loadCourse('TD05.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程6：天道解读第六天</span>
+        <button id="course6" onclick="loadCourse('TD06.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程7：天道解读第七天</span>
+        <button id="course7" onclick="loadCourse('TD07.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程8：天道解读第八天</span>
+        <button id="course8" onclick="loadCourse('TD08.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程9：天道解读第九天</span>
+        <button id="course9" onclick="loadCourse('TD09.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程10：天道解读第十天</span>
+        <button id="course10" onclick="loadCourse('TD10.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程11：天道解读第十一天</span>
+        <button id="course11" onclick="loadCourse('TD11.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程12：天道解读第十二天</span>
+        <button id="course12" onclick="loadCourse('TD12.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程13：天道解读第十三天</span>
+        <button id="course13" onclick="loadCourse('TD13.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程14：天道解读第十四天</span>
+        <button id="course14" onclick="loadCourse('TD14.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程15：天道解读第十五天</span>
+        <button id="course15" onclick="loadCourse('TD15.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程16：天道解读第十六天</span>
+        <button id="course16" onclick="loadCourse('TD16.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程17：天道解读第十七天</span>
+        <button id="course17" onclick="loadCourse('TD17.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程18：天道解读第十八天</span>
+        <button id="course18" onclick="loadCourse('TD18.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程19：天道解读第十九天</span>
+        <button id="course19" onclick="loadCourse('TD19.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程20：天道解读第二十天</span>
+        <button id="course20" onclick="loadCourse('TD20.html')" disabled>
+          阅读
+        </button>
+      </div>
+      <div class="course-item">
+        <span>课程21：天道解读第二十一天</span>
+        <button id="course21" onclick="loadCourse('TD21.html')" disabled>
+          阅读
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const progressBar =
+        document.getElementById("progress-bar").firstElementChild;
+      let progress = 0;
+      const totalCourses = 21; // 课程总数
+
+      function updateProgress() {
+        progress++;
+        const percentage = (progress / totalCourses) * 100;
+        progressBar.style.width = percentage + "%";
+        progressBar.innerText = percentage.toFixed(0) + "%";
+      }
+
+      function loadCourse(courseUrl) {
+        window.location.href = courseUrl;
+        // 模拟解锁下一个课程的逻辑
+        const nextCourseId = "course" + (progress + 2);
+        if (document.getElementById(nextCourseId)) {
+          document.getElementById(nextCourseId).disabled = false;
+        }
+        updateProgress();
+      }
+    </script>
+  </body>
+</html>
